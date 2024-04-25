@@ -63,9 +63,9 @@ public class Main {
 //		colorPoint.show();
 //	}
 	
-	private static void drawShape(Shape shape) {
-		shape.draw();
-	}
+//	private static void drawShape(Shape shape) {
+//		shape.draw();
+//	}
 	
 //	private static void drawTriangle(Triangle triangle) {
 //		triangle.draw();
