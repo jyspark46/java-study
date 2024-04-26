@@ -10,7 +10,7 @@ public class Base {
 	}
 	
 	public void day(){
-		System.out.println("낮");
+		System.out.print("낮");
 	}
 	
 	public void night(){
