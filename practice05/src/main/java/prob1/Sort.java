@@ -13,11 +13,19 @@ public class Sort {
 			System.out.print( array[ i ] + " " );
 		}
 		
-		//
-		// 정렬 알고리즘이 적용된 코드를 여기에 작성합니다.
-		//
-
+		// Bubble 정렬 알고리즘이 적용된 코드를 여기에 작성합니다. (이중포문) --> 하나씩 비교해서 정렬
+		int temp = 0;
 		
+		for(int i = 0; i < count; i++) {
+			for(int j = 0; j < count; j++) {
+				if(array[i] > array[j]) {
+					temp = array[j];
+					array[j] = array[i];
+					array[i] = temp;
+				}
+			}
+		}
+
 		// 결과 출력
 		System.out.println( "\nAfter Sort." );
 		
