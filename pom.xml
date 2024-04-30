@@ -25,5 +25,7 @@
 		<module>Chapter04</module>
 		<module>designpattern-practices</module>
 		<module>temp</module>
+		<module>ch04</module>
+		<module>chapter04</module>
 	</modules>
 </project>
