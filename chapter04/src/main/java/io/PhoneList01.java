@@ -63,7 +63,6 @@ public class PhoneList01 {
 						System.out.println(token + "\n");
 					}
 						
-					
 					index++;
 				}
 			}
