@@ -27,5 +27,6 @@
 		<module>temp</module>
 		<module>ch04</module>
 		<module>chapter04</module>
+		<module>network</module>
 	</modules>
 </project>
