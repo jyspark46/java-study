@@ -30,5 +30,6 @@
 		<module>network</module>
 		<module>holy</module>
 		<module>hoho</module>
+		<module>designpattern-practice</module>
 	</modules>
 </project>
