@@ -53,14 +53,10 @@ public class ChatClient {
 					pw.println("message:" + input);
 				}
 			}
-		} catch(SocketException e) {
-			log("Socket: " + e);
 		} catch(IOException e) {
 			log("error:" + e);
 		} finally {
 			try {
-				scanner.close();
-				
 				if(socket != null && !socket.isClosed()) {
 					socket.close();
 				}

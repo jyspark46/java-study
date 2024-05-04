@@ -56,6 +56,7 @@ public class ChatServerThread extends Thread {
 					doMessage(tokens[1]);
 				} else if("quit".equals(tokens[0])) {
 					doQuit(pw);
+					pw.println(tokens[1]);
 				} else {
 					ChatServer.log( "error: unknown request(" + tokens[0] + ")" );
 				}
@@ -81,7 +82,6 @@ public class ChatServerThread extends Thread {
 		this.nickname = nickname;
 		String data = nickname + "님이 참여하였습니다.";
 		
-		
 		// writer pool에 저장
 		addWriter(writer);
 		broadcast(data);
@@ -89,7 +89,7 @@ public class ChatServerThread extends Thread {
 		// ack
 		PrintWriter pw = (PrintWriter) writer;
 		pw.println("입장하였습니다. 즐거운 채팅 되세요.");
-		pw.flush();
+		//pw.flush();
 
 	}
 
@@ -110,7 +110,7 @@ public class ChatServerThread extends Thread {
 	private void doQuit(Writer writer) {
 		
 		removeWriter(writer);
-		String data = nickname + "님이 퇴장하였습니다";
+		String data = nickname + "님이 퇴장하였습니다.";
 		broadcast(data);
 
 	}

@@ -10,18 +10,19 @@ import java.util.List;
 
 public class ChatServer {
 
-	public static final int PORT = 6036;
+	public static final int PORT = 6002;
+	public static List<Writer> listWriters = null;
 	
 	public static void main(String[] args) {
 		
 		ServerSocket serverSocket = null;
-		List<Writer> listWriters = new ArrayList<Writer>();
+		listWriters = new ArrayList<Writer>();
 		
 		try {
 			// 1. 서버 소켓 생성
 			serverSocket = new ServerSocket();
 			// 2. 바인딩
-			serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT), 10);
+			serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT));
 			log("starts....[port:" + PORT + "]");
 			
 			// 3. 요청 대기

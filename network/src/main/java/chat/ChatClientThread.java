@@ -25,7 +25,7 @@ public class ChatClientThread extends Thread {
 				System.out.println(data);
 			}
 		} catch(IOException e) {
-				e.printStackTrace();
+
 		}
 	}
 }
