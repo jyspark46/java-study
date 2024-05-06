@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.concurrent.TimeoutException;
 
 public class TCPClient {
 	
@@ -20,6 +21,22 @@ public class TCPClient {
 			
 			// 1. socket 생성
 			socket = new Socket();
+			
+			// 1-1. 소켓 버퍼 사이즈 확인
+			int rcvBufferSize = socket.getReceiveBufferSize();
+			int sndBufferSize = socket.getSendBufferSize();
+			System.out.println("rcvBufferSize: " + rcvBufferSize + ", sndBufferSize: " + sndBufferSize);
+			
+			// 1-2. 소켓 버퍼 사이즈 변경
+			socket.setReceiveBufferSize(1024 * 10);
+			socket.setSendBufferSize(1024 * 10);
+			System.out.println("rcvBufferSize: " + rcvBufferSize + ", sndBufferSize: " + sndBufferSize);
+			
+			// 1-3. SO_NODELAY(Nagel Algorithm OFF)
+			socket.setTcpNoDelay(true);
+			
+			// 1-4. SO_TIMEOUT
+			socket.setSoTimeout(3000);
 			
 			// 2. 서버 연결
 			socket.connect(new InetSocketAddress(SERVER_IP, SERVER_PORT));
@@ -43,7 +60,9 @@ public class TCPClient {
 			data = new String(buffer, 0, readByteCount, "UTF-8");
 			System.out.println("[client] received: " + data);
 			
-		} catch (SocketException e) {
+		} /*catch (TimeoutException e) { 깃허브 보고 따라하기 !!
+			System.out.println("[client] suddenly closed by server.: " + e);
+		}*/ catch (SocketException e) {
 			System.out.println("[client] suddenly closed by server.: " + e);
 		} catch (IOException e) {
 			System.out.println("[client] error: " + e);
