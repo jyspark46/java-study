@@ -1,4 +1,4 @@
-package behavioral.iterattor;
+package behavioral.iterator;
 
 public interface Iterator<E> {
 	E next();

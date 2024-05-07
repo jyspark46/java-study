@@ -1,4 +1,4 @@
-package behavioral.iterattor;
+package behavioral.iterator;
 
 public class IteratorImp<E> implements Iterator<E> {
 

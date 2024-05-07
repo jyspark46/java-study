@@ -1,9 +1,9 @@
-package behavioral.iterattor;
+package behavioral.iterator;
 
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Aggregate<String> fruits = new AggregateImpl<>(new String[] {"Mango", "Banana", "Apple"});
 		Iterator<String> it = fruits.creatorIterator();
 		

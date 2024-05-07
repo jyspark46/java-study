@@ -1,4 +1,4 @@
-package behavioral.iterattor;
+package behavioral.iterator;
 
 public class AggregateImpl<E> implements Aggregate<E> {
 

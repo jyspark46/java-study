@@ -1,4 +1,4 @@
-package behavioral.iterattor;
+package behavioral.iterator;
 
 public interface Aggregate<E> {
 	Iterator<E> creatorIterator();
